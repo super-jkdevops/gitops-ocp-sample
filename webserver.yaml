@@ -16,7 +16,7 @@ spec:
         app: blueapp
     spec:
       containers:
-      - image: nginx
+      - image: ocnexus-ref01.fortisbank.com.pl:18079/nginx
         name: nginx
         ports:
         - containerPort: 80

@@ -1,3 +1,6 @@
+###
+# https://{route}/hello
+###
 apiVersion: apps/v1
 kind: Deployment
 metadata:

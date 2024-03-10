@@ -15,21 +15,8 @@ spec:
         app: greenapp
     spec:
       containers:
-      - image: nginx
-        name: nginx
-        ports:
-        - containerPort: 80
-          name: http
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: blueapp-service
-spec:
-  selector:
-    app: greenapp
-  ports:
-  - name: webserver
-    protocol: TCP
-    port: 80
-    targetPort: http
+      - image: busybox
+        name: tools
+        command:
+          - sleep
+          - infinity

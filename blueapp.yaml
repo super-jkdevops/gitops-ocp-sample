@@ -33,3 +33,20 @@ spec:
     protocol: TCP
     port: 8080
     targetPort: http
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: buleapp
+  labels:
+    app.kubernetes.io/instance: gitops-ocp-sample
+spec:
+  to:
+    kind: Service
+    name: blueapp-service
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+    destinationCACertificate: ''
+  port:
+    targetPort: webserver

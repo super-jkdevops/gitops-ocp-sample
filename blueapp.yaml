@@ -18,7 +18,7 @@ spec:
       - image: istio/examples-helloworld-v1
         name: node
         ports:
-        - containerPort: 8080
+        - containerPort: 80
           name: http
 ---
 apiVersion: v1
@@ -31,7 +31,7 @@ spec:
   ports:
   - name: webserver
     protocol: TCP
-    port: 8080
+    port: 80
     targetPort: http
 ---
 kind: Route
@@ -48,4 +48,4 @@ spec:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
   port:
-    targetPort: webserver
+    targetPort: 80

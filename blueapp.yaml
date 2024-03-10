@@ -15,10 +15,10 @@ spec:
         app: blueapp
     spec:
       containers:
-      - image: nginx
-        name: nginx
+      - image: node:current-alpine3.19
+        name: node
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: http
 ---
 apiVersion: v1
@@ -31,5 +31,5 @@ spec:
   ports:
   - name: webserver
     protocol: TCP
-    port: 80
+    port: 8080
     targetPort: http

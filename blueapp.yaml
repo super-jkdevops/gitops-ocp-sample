@@ -15,7 +15,7 @@ spec:
         app: blueapp
     spec:
       containers:
-      - image: node:current-alpine3.19
+      - image: istio/examples-helloworld-v1
         name: node
         ports:
         - containerPort: 8080
